@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.yogaprasetyo.capstone.core.databinding.ItemBannerBinding
 import com.yogaprasetyo.capstone.core.domain.model.Movie
-import com.yogaprasetyo.capstone.core.utils.DiffCallback
+import com.yogaprasetyo.capstone.core.utils.Helper.DiffCallback
 import com.yogaprasetyo.capstone.core.utils.loadImage
 
 
@@ -28,7 +28,7 @@ class BannerAdapter(private val itemClicked: (Movie) -> Unit) :
 
     override fun onBindViewHolder(holder: BannerViewHolder, position: Int) {
         val movie = getItem(position) as Movie
-        holder.bind(movie, itemClicked)
+        holder.bind(movie)
     }
 
     // Showing icon for favorite page
@@ -44,10 +44,11 @@ class BannerAdapter(private val itemClicked: (Movie) -> Unit) :
     inner class BannerViewHolder(private val binding: ItemBannerBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(movie: Movie, itemClicked: (Movie) -> Unit) {
+        fun bind(movie: Movie) {
             binding.apply {
                 val rating = "${movie.rating} (${movie.ratingCount})"
                 val fixGenres = movie.genres.replace("null", "Unknown")
+
                 tvItemTitle.text = movie.title
                 tvItemGenres.text = fixGenres
                 tvItemRating.text = rating
@@ -57,11 +58,10 @@ class BannerAdapter(private val itemClicked: (Movie) -> Unit) :
                 itemView.setOnClickListener { itemClicked(movie) }
                 when { // Show and apply action to icon favorite
                     isFavoritePage -> {
-                        val favorite: Boolean = movie.isFavorite
                         ibItemFavorite.apply {
-                            isVisible = favorite
+                            isVisible = isFavoritePage
                             setOnClickListener {
-                                onFavoriteClickCallback.iconClicked(movie, !favorite)
+                                onFavoriteClickCallback.iconClicked(movie, !isFavoritePage)
                             }
                         }
                     }
