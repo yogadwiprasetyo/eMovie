@@ -3,17 +3,34 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_empty_favorite.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_empty_search.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_favorite_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.117" />
+        <entry key="app/src/main/res/drawable/ic_outline_favorite_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_outline_home_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_search_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_star_rate_12.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_warning.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.117" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.117" />
         <entry key="core/src/main/res/drawable/ic_action.xml" value="0.1" />
         <entry key="core/src/main/res/drawable/ic_adventure.xml" value="0.1" />
         <entry key="core/src/main/res/drawable/ic_comedy.xml" value="0.1" />
         <entry key="core/src/main/res/drawable/ic_crime.xml" value="0.1" />
         <entry key="core/src/main/res/drawable/ic_drama.xml" value="0.1" />
+        <entry key="core/src/main/res/drawable/ic_error_image.xml" value="0.1" />
         <entry key="core/src/main/res/drawable/ic_family.xml" value="0.1" />
+        <entry key="core/src/main/res/drawable/ic_favorite_24.xml" value="0.1" />
         <entry key="core/src/main/res/drawable/ic_horror.xml" value="0.1" />
         <entry key="core/src/main/res/drawable/ic_romance.xml" value="0.1" />
         <entry key="core/src/main/res/drawable/ic_scifi.xml" value="0.1" />
+        <entry key="core/src/main/res/drawable/ic_star_rate_12.xml" value="0.1" />
         <entry key="core/src/main/res/drawable/ic_thriller.xml" value="0.1" />
+        <entry key="core/src/main/res/drawable/ic_warning.xml" value="0.1" />
+        <entry key="core/src/main/res/layout/item_banner.xml" value="0.19322916666666667" />
+        <entry key="core/src/main/res/layout/item_genre.xml" value="0.9" />
         <entry key="search/src/main/res/layout/activity_search.xml" value="0.19322916666666667" />
       </map>
     </option>
