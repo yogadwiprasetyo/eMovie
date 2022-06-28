@@ -3,4 +3,17 @@
     <string name="content_description_backdrop">Backdrop Movie</string>
     <string name="content_description_poster">Poster Movie</string>
     <string name="content_description_icon">Icon</string>
+
+    <string-array name="genres">
+        <item>Action</item>
+        <item>Adventure</item>
+        <item>Comedy</item>
+        <item>Crime</item>
+        <item>Drama</item>
+        <item>Family</item>
+        <item>Horror</item>
+        <item>Romance</item>
+        <item>Sci-fi</item>
+        <item>Thriller</item>
+    </string-array>
 </resources>
