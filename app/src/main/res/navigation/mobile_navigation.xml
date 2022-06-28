@@ -43,11 +43,12 @@
             android:defaultValue="TRENDING"
             app:argType="com.yogaprasetyo.capstone.core.utils.TypeMovie" />
     </activity>
+
+    <!-- Note: Feature berjalan lancar -->
     <activity
         android:id="@+id/searchActivity"
-        android:name="com.yogaprasetyo.capstone.emovie.search.SearchActivity"
-        android:label="activity_search"
-        tools:layout="@layout/activity_search" />
+        app:moduleName="search"
+        android:name="com.yogaprasetyo.capstone.search.SearchActivity" />
 
     <!-- Note: Feature berjalan lancar -->
     <fragment

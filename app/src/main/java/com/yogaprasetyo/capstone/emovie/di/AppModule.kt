@@ -5,7 +5,6 @@ import com.yogaprasetyo.capstone.core.domain.usecase.MovieUseCase
 import com.yogaprasetyo.capstone.emovie.detail.DetailViewModel
 import com.yogaprasetyo.capstone.emovie.explore.DetailSectionViewModel
 import com.yogaprasetyo.capstone.emovie.home.HomeViewModel
-import com.yogaprasetyo.capstone.emovie.search.SearchViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -15,7 +14,6 @@ val useCaseModule = module {
 
 val viewModelModule = module {
     viewModel { HomeViewModel(get()) }
-    viewModel { SearchViewModel(get()) }
     viewModel { DetailViewModel(get()) }
     viewModel { DetailSectionViewModel(get()) }
 }

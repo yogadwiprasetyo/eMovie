@@ -1,4 +1,4 @@
-package com.yogaprasetyo.capstone.emovie.search
+package com.yogaprasetyo.capstone.search
 
 import android.app.SearchManager
 import android.content.Context
@@ -15,10 +15,12 @@ import com.yogaprasetyo.capstone.core.data.Resource
 import com.yogaprasetyo.capstone.core.domain.model.Movie
 import com.yogaprasetyo.capstone.core.ui.BannerAdapter
 import com.yogaprasetyo.capstone.core.utils.QUERY_KEY
-import com.yogaprasetyo.capstone.emovie.R
-import com.yogaprasetyo.capstone.emovie.databinding.ActivitySearchBinding
 import com.yogaprasetyo.capstone.emovie.detail.DetailActivity
+import com.yogaprasetyo.capstone.search.databinding.ActivitySearchBinding
+import com.yogaprasetyo.capstone.search.di.searchModule
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.context.loadKoinModules
+import com.yogaprasetyo.capstone.emovie.R as app
 
 class SearchActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     private lateinit var searchView: SearchView
@@ -33,6 +35,8 @@ class SearchActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        loadKoinModules(searchModule)
 
         searchAdapter = BannerAdapter {
             startActivity(
@@ -72,7 +76,7 @@ class SearchActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     }
 
     private fun showEmptyInfo(showing: Boolean) {
-        val drawable = getDrawable(R.drawable.ic_empty_search)
+        val drawable = getDrawable(app.drawable.ic_empty_search)
         val message = getString(R.string.search_empty_results)
         updateDrawableAndTextInfo(drawable, message)
         showingInfo(showing)
@@ -84,8 +88,8 @@ class SearchActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
     private fun showErrorInfo() {
         showLoading(false)
-        val drawable = getDrawable(R.drawable.ic_warning)
-        val message = getString(R.string.error_info)
+        val drawable = getDrawable(app.drawable.ic_warning)
+        val message = getString(app.string.error_info)
         updateDrawableAndTextInfo(drawable, message)
         showingInfo(true)
     }
@@ -114,8 +118,8 @@ class SearchActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
-        val searchItem = menu.findItem(R.id.action_search)
+        menuInflater.inflate(app.menu.main_menu, menu)
+        val searchItem = menu.findItem(app.id.action_search)
         autoExpandSearchView(searchItem)
         setupSearchView(searchItem)
         return true

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_empty_results">The movie you were looking is not found</string>
+    <string name="search_hint">Find any movies</string>
+
+    <!-- PLURALS -->
+    <plurals name="numberOfMovie">
+        <item quantity="one">%d movie found.</item>
+        <item quantity="other">%d movies found.</item>
+    </plurals>
+</resources>

@@ -2,3 +2,4 @@ rootProject.name = "eMovie"
 include ':app'
 include ':core'
 include ':favorite'
+include ':search'

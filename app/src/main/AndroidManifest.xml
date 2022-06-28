@@ -16,8 +16,6 @@
             android:name=".explore.DetailSectionActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".search.SearchActivity"
-            android:exported="false"/>
         <activity
             android:name=".detail.DetailActivity"
             android:exported="false" />

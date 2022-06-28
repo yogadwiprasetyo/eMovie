@@ -1,4 +1,4 @@
-package com.yogaprasetyo.capstone.emovie.search
+package com.yogaprasetyo.capstone.search
 
 import androidx.lifecycle.*
 import com.yogaprasetyo.capstone.core.data.Resource
