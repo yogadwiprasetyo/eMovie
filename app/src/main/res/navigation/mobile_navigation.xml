@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.yogaprasetyo.capstone.emovie.home.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_detailSectionActivity"
+            app:destination="@id/detailSectionActivity" />
+        <action
+            android:id="@+id/action_navigation_home_to_detailActivity"
+            app:destination="@id/detailActivity" />
+        <action
+            android:id="@+id/action_navigation_home_to_searchActivity"
+            app:destination="@id/searchActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="com.yogaprasetyo.capstone.emovie.detail.DetailActivity"
+        android:label="@string/title_detail"
+        tools:layout="@layout/activity_detail">
+        <argument
+            android:name="extra_movie"
+            app:argType="com.yogaprasetyo.capstone.core.domain.model.Movie" />
+    </activity>
+    <activity
+        android:id="@+id/detailSectionActivity"
+        android:name="com.yogaprasetyo.capstone.emovie.explore.DetailSectionActivity"
+        android:label="@string/title_explore"
+        tools:layout="@layout/activity_detail_section">
+        <argument
+            android:name="genreId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="typeMovie"
+            android:defaultValue="TRENDING"
+            app:argType="com.yogaprasetyo.capstone.core.utils.TypeMovie" />
+    </activity>
+    <activity
+        android:id="@+id/searchActivity"
+        android:name="com.yogaprasetyo.capstone.emovie.search.SearchActivity"
+        android:label="activity_search"
+        tools:layout="@layout/activity_search" />
+
+    <!-- Note: Feature berjalan lancar -->
+    <fragment
+        android:id="@+id/navigation_favorite"
+        app:moduleName="favorite"
+        android:name="com.yogaprasetyo.capstone.favorite.FavoriteFragment">
+        <action
+            android:id="@+id/action_navigation_favorite_to_searchActivity"
+            app:destination="@id/searchActivity" />
+        <action
+            android:id="@+id/action_navigation_favorite_to_detailActivity"
+            app:destination="@id/detailActivity" />
+    </fragment>
+</navigation>

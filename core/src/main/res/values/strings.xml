@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content_description_backdrop">Backdrop Movie</string>
+    <string name="content_description_poster">Poster Movie</string>
+    <string name="content_description_icon">Icon</string>
+</resources>

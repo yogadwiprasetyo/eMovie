@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="168dp"
+    app:strokeColor="@color/cream"
+    app:strokeWidth="5dp"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_item_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/content_description_backdrop"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_item_poster"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/content_description_poster"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@id/iv_item_background"
+            app:layout_constraintStart_toStartOf="@id/iv_item_background"
+            app:layout_constraintTop_toTopOf="@id/iv_item_background"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            style="@style/TextItemCard"
+            android:id="@+id/tv_item_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_item_poster"
+            app:layout_constraintTop_toTopOf="@id/iv_item_poster"
+            tools:text="Fantastic Beasts: The Secrets of Dumbledore " />
+
+        <TextView
+            style="@style/TextItemCard"
+            android:id="@+id/tv_item_genres"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:ellipsize="end"
+            android:lines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_item_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_title"
+            tools:text="Fantasy, Adventure, Drama" />
+
+        <TextView
+            style="@style/TextItemCard"
+            android:id="@+id/tv_item_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@id/icon_rating"
+            app:layout_constraintStart_toEndOf="@id/icon_rating"
+            app:layout_constraintBottom_toBottomOf="@id/icon_rating"
+            tools:text="6.8 (1565)"
+            android:layout_marginLeft="4dp" />
+
+        <ImageView
+            android:id="@+id/icon_rating"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:contentDescription="@string/content_description_icon"
+            app:layout_constraintBottom_toBottomOf="@id/iv_item_poster"
+            app:layout_constraintStart_toStartOf="@id/tv_item_genres"
+            app:srcCompat="@drawable/ic_star_rate_12" />
+
+        <ImageButton
+            android:id="@+id/ib_item_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/iv_item_poster"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_favorite_24"
+            app:tint="@android:color/holo_red_light"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

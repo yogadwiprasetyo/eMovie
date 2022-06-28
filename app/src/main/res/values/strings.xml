@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">eMovie</string>
+    <string name="title_home">Home</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_detail">Detail Movie</string>
+    <string name="title_explore">Explore %1$s</string>
+    <string name="title_search">Search</string>
+
+    <!-- Content Description -->
+    <string name="content_description_poster">Poster Movie</string>
+    <string name="content_description_backdrop">Backdrop Movie</string>
+    <string name="content_description_info">Image info</string>
+    <string name="content_description_icon">Icon</string>
+    <string name="content_description_button">Floating Action Button</string>
+
+    <!-- HOME -->
+    <string name="home_title_genres">Genres</string>
+    <string name="home_title_trending">Trending</string>
+    <string name="home_title_now_playing">Now Playing</string>
+    <string name="home_title_top_rated">Top Rated</string>
+    <string name="home_subtitle_more">See all</string>
+
+    <!-- FAVORITE -->
+    <string name="favorite_empty_info">You haven\'t a favorite movie yet</string>
+
+    <!-- DETAIL -->
+    <string name="detail_two_wrap">%1$s (%2$s)</string>
+    <string name="detail_title_synopsis">Synopsis</string>
+
+    <!-- SEARCH -->
+    <string name="search_empty_results">The movie you were looking is not found</string>
+    <string name="search_hint">Find any movies</string>
+
+    <!-- GENERAL -->
+    <string name="empty_info">No movies available in the server</string>
+    <string name="error_info">Oops! Something wrong</string>
+
+    <!-- PLURALS -->
+    <plurals name="numberOfMovie">
+        <item quantity="one">%d movie found.</item>
+        <item quantity="other">%d movies found.</item>
+    </plurals>
+</resources>
