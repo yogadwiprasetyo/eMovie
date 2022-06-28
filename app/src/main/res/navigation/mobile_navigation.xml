@@ -45,12 +45,16 @@
     </activity>
 
     <!-- Note: Feature berjalan lancar -->
+    <!-- Terdeteksi error karena module app tidak terhubung dengan module search -->
+    <!--suppress AndroidDomInspection : Solution to ignore this error -->
     <activity
         android:id="@+id/searchActivity"
         app:moduleName="search"
         android:name="com.yogaprasetyo.capstone.search.SearchActivity" />
 
     <!-- Note: Feature berjalan lancar -->
+    <!-- Terdeteksi error karena module app tidak terhubung dengan module favorite -->
+    <!--suppress AndroidDomInspection : Solution to ignore this error -->
     <fragment
         android:id="@+id/navigation_favorite"
         app:moduleName="favorite"
