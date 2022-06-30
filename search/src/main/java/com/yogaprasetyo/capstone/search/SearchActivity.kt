@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -76,7 +77,7 @@ class SearchActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     }
 
     private fun showEmptyInfo(showing: Boolean) {
-        val drawable = getDrawable(app.drawable.ic_empty_search)
+        val drawable = AppCompatResources.getDrawable(this, app.drawable.ic_empty_search)
         val message = getString(R.string.search_empty_results)
         updateDrawableAndTextInfo(drawable, message)
         showingInfo(showing)
@@ -88,7 +89,7 @@ class SearchActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
     private fun showErrorInfo() {
         showLoading(false)
-        val drawable = getDrawable(app.drawable.ic_warning)
+        val drawable = AppCompatResources.getDrawable(this, app.drawable.ic_warning)
         val message = getString(app.string.error_info)
         updateDrawableAndTextInfo(drawable, message)
         showingInfo(true)

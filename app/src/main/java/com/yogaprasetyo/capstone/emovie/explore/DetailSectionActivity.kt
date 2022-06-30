@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.isVisible
 import androidx.navigation.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -62,7 +63,7 @@ class DetailSectionActivity : AppCompatActivity() {
     }
 
     private fun showEmptyInfo() {
-        val drawable = getDrawable(R.drawable.ic_empty_search)
+        val drawable = AppCompatResources.getDrawable(this, R.drawable.ic_empty_search)
         val message = getString(R.string.empty_info)
         updateDrawableAndTextInfo(drawable, message)
         showingInfo(true)
@@ -74,7 +75,7 @@ class DetailSectionActivity : AppCompatActivity() {
 
     private fun showErrorInfo() {
         showLoading(false)
-        val drawable = getDrawable(R.drawable.ic_warning)
+        val drawable = AppCompatResources.getDrawable(this, R.drawable.ic_warning)
         val message = getString(R.string.error_info)
         updateDrawableAndTextInfo(drawable, message)
         showingInfo(true)
