@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 class FavoriteViewModel(private val movieUseCase: MovieUseCase) : ViewModel() {
 
-    val favoritesMovie = movieUseCase.getFavoriteMovie().asLiveData()
+    fun loadFavoriteMovies() = movieUseCase.getFavoriteMovie().asLiveData()
 
     fun updateFavoriteMovie(movie: Movie, newState: Boolean) {
         viewModelScope.launch {

@@ -53,7 +53,7 @@ class FavoriteFragment : Fragment() {
         favoriteAdapter.inFavoritePage()
         favoriteAdapter.setOnIconClickCallback(favoriteClickCallback)
 
-        favoriteViewModel.favoritesMovie.observe(viewLifecycleOwner) { showFavorite(it) }
+        favoriteViewModel.loadFavoriteMovies().observe(viewLifecycleOwner) { showFavorite(it) }
 
         binding?.rvFavorites?.apply {
             layoutManager = LinearLayoutManager(requireContext())
