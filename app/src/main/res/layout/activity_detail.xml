@@ -65,7 +65,6 @@
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:layout_marginEnd="4dp"
-            android:layout_marginRight="4dp"
             android:contentDescription="@string/content_description_icon"
             app:layout_constraintBottom_toBottomOf="@id/tv_rating"
             app:layout_constraintEnd_toStartOf="@id/tv_rating"

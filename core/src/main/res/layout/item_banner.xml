@@ -40,7 +40,6 @@
             android:layout_width="100dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="@string/content_description_poster"
@@ -56,9 +55,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
             android:textStyle="bold"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +70,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
             android:ellipsize="end"
             android:lines="1"
             app:layout_constraintEnd_toEndOf="parent"
@@ -91,8 +87,7 @@
             app:layout_constraintTop_toTopOf="@id/icon_rating"
             app:layout_constraintStart_toEndOf="@id/icon_rating"
             app:layout_constraintBottom_toBottomOf="@id/icon_rating"
-            tools:text="6.8 (1565)"
-            android:layout_marginLeft="4dp" />
+            tools:text="6.8 (1565)" />
 
         <ImageView
             android:id="@+id/icon_rating"
@@ -115,7 +110,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_favorite_24"
             app:tint="@android:color/holo_red_light"
-            tools:visibility="visible" />
+            tools:visibility="visible"
+            android:contentDescription="@string/content_description_icon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
