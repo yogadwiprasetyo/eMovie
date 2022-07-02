@@ -18,7 +18,10 @@
             app:destination="@id/detailActivity" />
         <action
             android:id="@+id/action_navigation_home_to_searchActivity"
-            app:destination="@id/searchActivity" />
+            app:destination="@id/search_navigation" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_favorite"
+            app:destination="@id/navigation_favorite" />
     </fragment>
     <activity
         android:id="@+id/detailActivity"
@@ -27,7 +30,7 @@
         tools:layout="@layout/activity_detail">
         <argument
             android:name="extra_movie"
-            app:argType="com.yogaprasetyo.capstone.core.domain.model.Movie" />
+            app:argType="com.yogaprasetyo.capstone.emovie.core.domain.model.Movie" />
     </activity>
     <activity
         android:id="@+id/detailSectionActivity"
@@ -40,30 +43,27 @@
             app:argType="integer" />
         <argument
             android:name="typeMovie"
-            android:defaultValue="TRENDING"
-            app:argType="com.yogaprasetyo.capstone.core.utils.TypeMovie" />
+            android:defaultValue="POPULAR"
+            app:argType="com.yogaprasetyo.capstone.emovie.core.utils.TypeMovie" />
     </activity>
-
-    <!-- Note: Feature berjalan lancar -->
-    <!-- Terdeteksi error karena module app tidak terhubung dengan module search -->
-    <!--suppress AndroidDomInspection : Solution to ignore this error -->
-    <activity
-        android:id="@+id/searchActivity"
-        app:moduleName="search"
-        android:name="com.yogaprasetyo.capstone.search.SearchActivity" />
+    <include-dynamic
+        android:id="@+id/search_navigation"
+        app:graphPackage="com.yogaprasetyo.capstone.emovie.search"
+        app:graphResName="search_navigation"
+        app:moduleName="search" />
 
     <!-- Note: Feature berjalan lancar -->
     <!-- Terdeteksi error karena module app tidak terhubung dengan module favorite -->
     <!--suppress AndroidDomInspection : Solution to ignore this error -->
-    <fragment
-        android:id="@+id/navigation_favorite"
-        app:moduleName="favorite"
-        android:name="com.yogaprasetyo.capstone.favorite.FavoriteFragment">
-        <action
-            android:id="@+id/action_navigation_favorite_to_searchActivity"
-            app:destination="@id/searchActivity" />
-        <action
-            android:id="@+id/action_navigation_favorite_to_detailActivity"
-            app:destination="@id/detailActivity" />
-    </fragment>
+        <fragment
+            android:id="@+id/navigation_favorite"
+            app:moduleName="favorite"
+            android:name="com.yogaprasetyo.capstone.emovie.favorite.FavoriteFragment">
+            <action
+                android:id="@+id/action_navigation_favorite_to_searchActivity"
+                app:destination="@id/search_navigation" />
+            <action
+                android:id="@+id/action_navigation_favorite_to_detailActivity"
+                app:destination="@id/detailActivity" />
+        </fragment>
 </navigation>
