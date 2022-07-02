@@ -1,4 +1,4 @@
-package com.yogaprasetyo.capstone.favorite
+package com.yogaprasetyo.capstone.emovie.favorite
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,10 +9,11 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.yogaprasetyo.capstone.core.domain.model.Movie
-import com.yogaprasetyo.capstone.core.ui.BannerAdapter
 import com.yogaprasetyo.capstone.emovie.R
-import com.yogaprasetyo.capstone.favorite.databinding.FragmentFavoriteBinding
+import com.yogaprasetyo.capstone.emovie.core.domain.model.Movie
+import com.yogaprasetyo.capstone.emovie.core.ui.BannerAdapter
+import com.yogaprasetyo.capstone.emovie.core.utils.viewLifecycleLazy
+import com.yogaprasetyo.capstone.emovie.favorite.databinding.FragmentFavoriteBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 
@@ -23,7 +24,7 @@ class FavoriteFragment : Fragment() {
 
     private val favoriteViewModel: FavoriteViewModel by viewModel()
 
-    private lateinit var favoriteAdapter: BannerAdapter
+    private val favoriteAdapter by viewLifecycleLazy { BannerAdapter { moveToDetail(it) } }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +50,6 @@ class FavoriteFragment : Fragment() {
             }
         }
 
-        favoriteAdapter = BannerAdapter { moveToDetail(it) }
         favoriteAdapter.inFavoritePage()
         favoriteAdapter.setOnIconClickCallback(favoriteClickCallback)
 
@@ -92,6 +92,11 @@ class FavoriteFragment : Fragment() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onDestroy() {

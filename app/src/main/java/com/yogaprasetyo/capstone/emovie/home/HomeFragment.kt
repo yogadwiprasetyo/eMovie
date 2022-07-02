@@ -12,16 +12,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.yogaprasetyo.capstone.core.data.Resource
-import com.yogaprasetyo.capstone.core.domain.model.Movie
-import com.yogaprasetyo.capstone.core.ui.BannerAdapter
-import com.yogaprasetyo.capstone.core.ui.GenresAdapter
-import com.yogaprasetyo.capstone.core.ui.ThumbnailAdapter
-import com.yogaprasetyo.capstone.core.utils.TypeMovie
-import com.yogaprasetyo.capstone.core.utils.calculateAutoColumns
-import com.yogaprasetyo.capstone.core.utils.loadGenresId
-import com.yogaprasetyo.capstone.core.utils.preview
 import com.yogaprasetyo.capstone.emovie.R
+import com.yogaprasetyo.capstone.emovie.core.data.Resource
+import com.yogaprasetyo.capstone.emovie.core.domain.model.Movie
+import com.yogaprasetyo.capstone.emovie.core.ui.BannerAdapter
+import com.yogaprasetyo.capstone.emovie.core.ui.GenresAdapter
+import com.yogaprasetyo.capstone.emovie.core.ui.ThumbnailAdapter
+import com.yogaprasetyo.capstone.emovie.core.utils.*
 import com.yogaprasetyo.capstone.emovie.databinding.FragmentHomeBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -32,10 +29,10 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding
 
-    private lateinit var trendingAdapter: ThumbnailAdapter
-    private lateinit var nowPlayingAdapter: ThumbnailAdapter
-    private lateinit var topRatedAdapter: ThumbnailAdapter
-    private lateinit var popularAdapter: BannerAdapter
+    private val trendingAdapter by viewLifecycleLazy { ThumbnailAdapter { moveToDetail(it) } }
+    private val nowPlayingAdapter by viewLifecycleLazy { ThumbnailAdapter { moveToDetail(it) } }
+    private val topRatedAdapter by viewLifecycleLazy { ThumbnailAdapter { moveToDetail(it) } }
+    private val popularAdapter by viewLifecycleLazy { BannerAdapter { moveToDetail(it) } }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,11 +50,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        trendingAdapter = ThumbnailAdapter { moveToDetail(it) }
-        nowPlayingAdapter = ThumbnailAdapter { moveToDetail(it) }
-        topRatedAdapter = ThumbnailAdapter { moveToDetail(it) }
-        popularAdapter = BannerAdapter { moveToDetail(it) }
 
         val popular = TypeMovie.POPULAR
         val trending = TypeMovie.TRENDING
@@ -136,13 +128,24 @@ class HomeFragment : Fragment() {
     }
 
     private fun showingInfo(hasInfo: Boolean, type: TypeMovie) {
-        val tv = when (type) {
-            TypeMovie.POPULAR -> binding?.tvInfoPopular
-            TypeMovie.TRENDING -> binding?.tvInfoTrending
-            TypeMovie.NOW_PLAYING -> binding?.tvInfoNowPlaying
-            TypeMovie.TOP_RATED -> binding?.tvInfoTopRated
+        when (type) {
+            TypeMovie.POPULAR -> {
+                binding?.tvInfoPopular?.isVisible = hasInfo
+                binding?.rvPopular?.isVisible = !hasInfo
+            }
+            TypeMovie.TRENDING -> {
+                binding?.tvInfoTrending?.isVisible = hasInfo
+                binding?.rvTrending?.isVisible = !hasInfo
+            }
+            TypeMovie.NOW_PLAYING -> {
+                binding?.tvInfoNowPlaying?.isVisible = hasInfo
+                binding?.rvNowPlaying?.isVisible = !hasInfo
+            }
+            TypeMovie.TOP_RATED -> {
+                binding?.tvInfoTopRated?.isVisible = hasInfo
+                binding?.rvTopRated?.isVisible = !hasInfo
+            }
         }
-        tv?.isVisible = hasInfo
     }
 
     private fun updateTextInfo(message: String, type: TypeMovie) {
@@ -215,6 +218,11 @@ class HomeFragment : Fragment() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onDestroy() {
