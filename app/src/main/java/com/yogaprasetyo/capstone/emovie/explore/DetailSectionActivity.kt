@@ -8,11 +8,11 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.isVisible
 import androidx.navigation.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.yogaprasetyo.capstone.core.data.Resource
-import com.yogaprasetyo.capstone.core.domain.model.Movie
-import com.yogaprasetyo.capstone.core.ui.BannerAdapter
-import com.yogaprasetyo.capstone.core.utils.getGenreByKey
 import com.yogaprasetyo.capstone.emovie.R
+import com.yogaprasetyo.capstone.emovie.core.data.Resource
+import com.yogaprasetyo.capstone.emovie.core.domain.model.Movie
+import com.yogaprasetyo.capstone.emovie.core.ui.BannerAdapter
+import com.yogaprasetyo.capstone.emovie.core.utils.getGenreByKey
 import com.yogaprasetyo.capstone.emovie.databinding.ActivityDetailSectionBinding
 import com.yogaprasetyo.capstone.emovie.detail.DetailActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel

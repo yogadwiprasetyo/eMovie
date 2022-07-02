@@ -4,9 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.navArgs
-import com.yogaprasetyo.capstone.core.domain.model.Movie
-import com.yogaprasetyo.capstone.core.utils.loadImage
 import com.yogaprasetyo.capstone.emovie.R
+import com.yogaprasetyo.capstone.emovie.core.domain.model.Movie
+import com.yogaprasetyo.capstone.emovie.core.utils.loadImage
 import com.yogaprasetyo.capstone.emovie.databinding.ActivityDetailBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

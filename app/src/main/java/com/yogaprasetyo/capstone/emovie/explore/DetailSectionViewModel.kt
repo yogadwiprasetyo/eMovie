@@ -1,10 +1,10 @@
 package com.yogaprasetyo.capstone.emovie.explore
 
 import androidx.lifecycle.*
-import com.yogaprasetyo.capstone.core.data.Resource
-import com.yogaprasetyo.capstone.core.domain.model.Movie
-import com.yogaprasetyo.capstone.core.domain.usecase.MovieUseCase
-import com.yogaprasetyo.capstone.core.utils.GENRE_KEY
+import com.yogaprasetyo.capstone.emovie.core.data.Resource
+import com.yogaprasetyo.capstone.emovie.core.domain.model.Movie
+import com.yogaprasetyo.capstone.emovie.core.domain.usecase.MovieUseCase
+import com.yogaprasetyo.capstone.emovie.core.utils.GENRE_KEY
 
 class DetailSectionViewModel(movieUseCase: MovieUseCase) : ViewModel() {
 

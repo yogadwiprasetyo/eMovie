@@ -1,9 +1,9 @@
 package com.yogaprasetyo.capstone.emovie.detail
 
-import com.yogaprasetyo.capstone.core.domain.usecase.MovieUseCase
-import com.yogaprasetyo.capstone.core.utils.testing.DataDummy.dummyMovie
-import com.yogaprasetyo.capstone.core.utils.testing.DataDummy.dummyState
-import com.yogaprasetyo.capstone.core.utils.testing.MainDispatcherRule
+import com.yogaprasetyo.capstone.emovie.core.domain.usecase.MovieUseCase
+import com.yogaprasetyo.capstone.emovie.core.utils.testing.DataDummy.dummyMovie
+import com.yogaprasetyo.capstone.emovie.core.utils.testing.DataDummy.dummyState
+import com.yogaprasetyo.capstone.emovie.core.utils.testing.MainDispatcherRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Before

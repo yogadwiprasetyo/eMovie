@@ -2,17 +2,16 @@ package com.yogaprasetyo.capstone.emovie.home
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
-import com.yogaprasetyo.capstone.core.data.Resource
-import com.yogaprasetyo.capstone.core.domain.model.Movie
-import com.yogaprasetyo.capstone.core.domain.usecase.MovieUseCase
-import com.yogaprasetyo.capstone.core.utils.testing.DataDummy.dummyDataResource
-import com.yogaprasetyo.capstone.core.utils.testing.DataDummy.dummyQueriesGeneral
-import com.yogaprasetyo.capstone.core.utils.testing.DataDummy.dummyTypeMovie
-import com.yogaprasetyo.capstone.core.utils.testing.DataDummy.shouldNotNull
-import com.yogaprasetyo.capstone.core.utils.testing.DataDummy.shouldTrue
-import com.yogaprasetyo.capstone.core.utils.testing.MainDispatcherRule
-import com.yogaprasetyo.capstone.core.utils.testing.getOrAwaitValue
-
+import com.yogaprasetyo.capstone.emovie.core.data.Resource
+import com.yogaprasetyo.capstone.emovie.core.domain.model.Movie
+import com.yogaprasetyo.capstone.emovie.core.domain.usecase.MovieUseCase
+import com.yogaprasetyo.capstone.emovie.core.utils.testing.DataDummy.dummyDataResource
+import com.yogaprasetyo.capstone.emovie.core.utils.testing.DataDummy.dummyQueriesGeneral
+import com.yogaprasetyo.capstone.emovie.core.utils.testing.DataDummy.dummyTypeMovie
+import com.yogaprasetyo.capstone.emovie.core.utils.testing.DataDummy.shouldNotNull
+import com.yogaprasetyo.capstone.emovie.core.utils.testing.DataDummy.shouldTrue
+import com.yogaprasetyo.capstone.emovie.core.utils.testing.MainDispatcherRule
+import com.yogaprasetyo.capstone.emovie.core.utils.testing.getOrAwaitValue
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
 import org.junit.Assert.assertNotNull
@@ -55,6 +54,6 @@ class HomeViewModelTest {
             .getOrAwaitValue()
 
         assertNotNull(shouldNotNull, actualResult)
-        assertTrue(shouldTrue, actualResult is Resource.Success)
+        assertTrue(shouldTrue, actualResult is Resource.Success<*>)
     }
 }
