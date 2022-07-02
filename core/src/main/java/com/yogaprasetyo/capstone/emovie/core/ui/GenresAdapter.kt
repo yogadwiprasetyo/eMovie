@@ -1,13 +1,13 @@
-package com.yogaprasetyo.capstone.core.ui
+package com.yogaprasetyo.capstone.emovie.core.ui
 
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
-import com.yogaprasetyo.capstone.core.R
-import com.yogaprasetyo.capstone.core.databinding.ItemGenreBinding
-import com.yogaprasetyo.capstone.core.utils.getGenreByKey
-
+import com.yogaprasetyo.capstone.emovie.core.R
+import com.yogaprasetyo.capstone.emovie.core.databinding.ItemGenreBinding
+import com.yogaprasetyo.capstone.emovie.core.utils.getGenreByKey
 
 class GenresAdapter(
     private val listGenre: List<Int>,
@@ -45,17 +45,17 @@ class GenresAdapter(
             val context = itemView.context
             val genres = context.resources.getStringArray(R.array.genres)
             return when (getGenreByKey(genreId)) {
-                genres[0] -> context.getDrawable(R.drawable.ic_action)
-                genres[1] -> context.getDrawable(R.drawable.ic_adventure)
-                genres[2] -> context.getDrawable(R.drawable.ic_comedy)
-                genres[3] -> context.getDrawable(R.drawable.ic_crime)
-                genres[4] -> context.getDrawable(R.drawable.ic_drama)
-                genres[5] -> context.getDrawable(R.drawable.ic_family)
-                genres[6] -> context.getDrawable(R.drawable.ic_horror)
-                genres[7] -> context.getDrawable(R.drawable.ic_romance)
-                genres[8] -> context.getDrawable(R.drawable.ic_scifi)
-                genres[9] -> context.getDrawable(R.drawable.ic_thriller)
-                else -> context.getDrawable(R.drawable.ic_warning)
+                genres[0] -> AppCompatResources.getDrawable(context, R.drawable.ic_action)
+                genres[0] -> AppCompatResources.getDrawable(context, R.drawable.ic_adventure)
+                genres[0] -> AppCompatResources.getDrawable(context, R.drawable.ic_comedy)
+                genres[0] -> AppCompatResources.getDrawable(context, R.drawable.ic_crime)
+                genres[0] -> AppCompatResources.getDrawable(context, R.drawable.ic_drama)
+                genres[0] -> AppCompatResources.getDrawable(context, R.drawable.ic_family)
+                genres[0] -> AppCompatResources.getDrawable(context, R.drawable.ic_horror)
+                genres[0] -> AppCompatResources.getDrawable(context, R.drawable.ic_romance)
+                genres[0] -> AppCompatResources.getDrawable(context, R.drawable.ic_scifi)
+                genres[0] -> AppCompatResources.getDrawable(context, R.drawable.ic_thriller)
+                else -> AppCompatResources.getDrawable(context, R.drawable.ic_warning)
             }
         }
     }
