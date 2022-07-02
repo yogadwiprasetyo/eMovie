@@ -4,6 +4,8 @@ plugins {
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 apply from: '../shared_dependencies.gradle'
@@ -18,16 +20,21 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+         // Enable proguard configuration in debug mode
+         debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+         }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -44,5 +51,7 @@ android {
 
 dependencies {
     implementation project(":core")
-    implementation fileTree(dir: "libs", include: ["*.jar"])
+    // Firebase Analytics & Crashlytics
+    implementation "com.google.firebase:firebase-crashlytics-ktx:$firebase_crashlytics_version"
+    implementation "com.google.firebase:firebase-analytics-ktx:$firebase_analytics_version"
 }

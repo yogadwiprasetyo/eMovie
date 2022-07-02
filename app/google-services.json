@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "798710808667",
+    "project_id": "emovie-capstone-dicoding",
+    "storage_bucket": "emovie-capstone-dicoding.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:798710808667:android:57129d809b33a524ebff7e",
+        "android_client_info": {
+          "package_name": "com.yogaprasetyo.capstone.emovie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "798710808667-caanpkohe017edc3eg4623hjsuv8ipb8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzzHemNOhNlz-HyNVO3co8b5-_k39gj5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "798710808667-caanpkohe017edc3eg4623hjsuv8ipb8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

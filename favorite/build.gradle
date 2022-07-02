@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 apply from: '../shared_dependencies.gradle'
 
@@ -36,5 +38,7 @@ android {
 dependencies {
     implementation project(":core")
     implementation project(":app")
-    implementation fileTree(dir: "libs", include: ["*.jar"])
+    // Firebase Analytics & Crashlytics
+    implementation "com.google.firebase:firebase-crashlytics-ktx:$firebase_crashlytics_version"
+    implementation "com.google.firebase:firebase-analytics-ktx:$firebase_analytics_version"
 }
