@@ -1,11 +1,9 @@
 package com.yogaprasetyo.capstone.emovie
 
 import android.app.Application
-import android.content.Context
-import androidx.multidex.MultiDex
-import com.yogaprasetyo.capstone.core.di.databaseModule
-import com.yogaprasetyo.capstone.core.di.networkModule
-import com.yogaprasetyo.capstone.core.di.repositoryModule
+import com.yogaprasetyo.capstone.emovie.core.di.databaseModule
+import com.yogaprasetyo.capstone.emovie.core.di.networkModule
+import com.yogaprasetyo.capstone.emovie.core.di.repositoryModule
 import com.yogaprasetyo.capstone.emovie.di.useCaseModule
 import com.yogaprasetyo.capstone.emovie.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -29,11 +27,5 @@ class MovieApplication : Application() {
                 )
             )
         }
-    }
-
-    // Avoid the 64K limit problem
-    override fun attachBaseContext(base: Context?) {
-        super.attachBaseContext(base)
-        MultiDex.install(this)
     }
 }
