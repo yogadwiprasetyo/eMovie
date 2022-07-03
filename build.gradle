@@ -38,6 +38,17 @@ buildscript {
     ext.firebase_crashlytics_version = '18.2.11'
     ext.firebase_analytics_version = '21.0.0'
 
+    // Leak Canary
+    ext.leak_canary_version = '2.9.1'
+
+    // Testing: JUnit, mockito, coroutine, core-testing & espresso
+    ext.junit_version = '4.13.2'
+    ext.mockito_core_version = '4.3.1'
+    ext.mockito_inline_version = '3.12.4'
+    ext.coroutine_test_version = '1.6.1'
+    ext.core_testing_version = '2.1.0'
+    ext.espresso_core_version = '3.4.0'
+
     repositories {
         google()
         mavenCentral()
