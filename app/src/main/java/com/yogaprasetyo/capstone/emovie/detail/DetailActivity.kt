@@ -38,10 +38,11 @@ class DetailActivity : AppCompatActivity() {
     private fun setupDataToView(movie: Movie) {
         val (_, poster, _, title, releaseDate, rating, ratingCount, genres, overview, _, _, isFavorite) = movie
         val year = releaseDate.split("-")[0]
+        val fixGenres = genres.replace("null", "Unknown")
 
         binding.apply {
             ivPoster.loadImage(this@DetailActivity, poster)
-            tvGenres.text = genres
+            tvGenres.text = fixGenres
             tvOverview.text = overview
             tvTitle.text = getString(R.string.detail_two_wrap, title, year)
             tvRating.text =
