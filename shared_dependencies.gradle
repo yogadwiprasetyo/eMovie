@@ -15,24 +15,24 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:$glide_version"
 
     // Implement Testing Junit, Mockito, Coroutine
-    implementation 'junit:junit:4.13.2'
-    implementation "org.mockito:mockito-core:4.3.1"
-    implementation "org.mockito:mockito-inline:3.12.4"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1"
-    implementation "androidx.arch.core:core-testing:2.1.0"
+    implementation "junit:junit:$junit_version"
+    implementation "org.mockito:mockito-core:$mockito_core_version"
+    implementation "org.mockito:mockito-inline:$mockito_inline_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutine_test_version"
+    implementation "androidx.arch.core:core-testing:$core_testing_version"
 
     // Testing
-    testImplementation 'junit:junit:4.13.2'
-    testImplementation "org.mockito:mockito-core:4.3.1"
-    testImplementation "org.mockito:mockito-inline:3.12.4"
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1" // Coroutine Test
-    testImplementation "androidx.arch.core:core-testing:2.1.0" // InstantTaskExecutorRule
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "org.mockito:mockito-core:$mockito_core_version"
+    testImplementation "org.mockito:mockito-inline:$mockito_inline_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutine_test_version" // Coroutine Test
+    testImplementation "androidx.arch.core:core-testing:$core_testing_version" // InstantTaskExecutorRule
 
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
-    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1"
+    androidTestImplementation "androidx.test.ext:junit:$junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core_version"
+    androidTestImplementation "androidx.arch.core:core-testing:$core_testing_version"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutine_test_version"
 
     // LeakCanary
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leak_canary_version"
 }
