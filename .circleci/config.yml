@@ -40,7 +40,7 @@ jobs:
 
       - run:
           name: Run Tests
-          command: ./gradlew lint test
+          command: ./gradlew test
       - store_test_results:
           path: app/build/test-results
       - store_test_results:
