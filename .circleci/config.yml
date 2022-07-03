@@ -41,15 +41,7 @@ jobs:
       - run:
           name: Run Tests
           command: ./gradlew lint test
-      - store_test_results:
-          path: app/build/test-results/testReleaseUnitTest
-      - store_test_results:
-          path: core/build/test-results/testReleaseUnitTest
-      - store_test_results:
-          path: favorite/build/test-results/testReleaseUnitTest
-      - store_test_results:
-          path: search/build/test-results/testReleaseUnitTest
-          
+
       - store_artifacts:  
           path: app/build/outputs/apk/debug/
           destination: artifact-file
