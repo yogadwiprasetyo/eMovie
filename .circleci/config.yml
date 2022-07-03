@@ -29,11 +29,6 @@ jobs:
       - android/run-tests:
           test-command: ./gradlew lint test
 
-      # Then start the emulator and run the Instrumentation tests!
-      - android/start-emulator-and-run-tests:
-          test-command: ./gradlew connectedDebugAndroidTest
-          system-image: system-images;android-25;google_apis;x86
-
       # And finally run the build
       - run:
           name: Run Build
@@ -48,11 +43,20 @@ jobs:
           path: favorite/build/test-results
       - store_test_results:
           path: search/build/test-results
-      
-      # Store reports testing
+
+      # Store reports testing for all module
       - store_artifacts:
           path: app/build/reports
-          destination: reports
+          destination: reports/app
+      - store_artifacts:
+          path: core/build/reports
+          destination: reports/core
+      - store_artifacts:
+          path: favorite/build/reports
+          destination: reports/favorite
+      - store_artifacts:
+          path: search/build/reports
+          destination: reports/search
       
       # Store file build APK
       - store_artifacts:  
