@@ -30,8 +30,6 @@ dependencies {
 
     androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core_version"
-    androidTestImplementation "androidx.arch.core:core-testing:$core_testing_version"
-    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutine_test_version"
 
     // LeakCanary
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leak_canary_version"
