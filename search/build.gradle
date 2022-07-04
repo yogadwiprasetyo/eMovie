@@ -41,4 +41,7 @@ dependencies {
     // Firebase Analytics & Crashlytics
     implementation "com.google.firebase:firebase-crashlytics-ktx:$firebase_crashlytics_version"
     implementation "com.google.firebase:firebase-analytics-ktx:$firebase_analytics_version"
+    // RxJava3
+    implementation "io.reactivex.rxjava3:rxjava:$rxjava_version"
+    implementation "io.reactivex.rxjava3:rxandroid:$rxjava_android_version"
 }

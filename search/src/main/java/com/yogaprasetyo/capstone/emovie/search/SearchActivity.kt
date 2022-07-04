@@ -19,11 +19,13 @@ import com.yogaprasetyo.capstone.emovie.core.utils.QUERY_KEY
 import com.yogaprasetyo.capstone.emovie.detail.DetailActivity
 import com.yogaprasetyo.capstone.emovie.search.databinding.ActivitySearchBinding
 import com.yogaprasetyo.capstone.emovie.search.di.searchModule
+import io.reactivex.rxjava3.core.Observable
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
+import java.util.concurrent.TimeUnit
 import com.yogaprasetyo.capstone.emovie.R as app
 
-class SearchActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
+class SearchActivity : AppCompatActivity() {
     private lateinit var searchView: SearchView
     private lateinit var searchManager: SearchManager
     private lateinit var binding: ActivitySearchBinding
@@ -145,17 +147,29 @@ class SearchActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
         searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
         searchView.queryHint = getString(R.string.search_hint)
-        searchView.setOnQueryTextListener(this)
+        setupReactiveQueryListener(searchView)
     }
 
-    override fun onQueryTextSubmit(query: String?): Boolean {
-        if (query.isNullOrEmpty()) return true
+    private fun setupReactiveQueryListener(searchView: SearchView) {
+        Observable
+            .create { subscriber ->
+                searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                    override fun onQueryTextChange(newText: String): Boolean {
+                        subscriber.onNext(newText)
+                        return false
+                    }
 
-        val queries = mutableMapOf(QUERY_KEY to query)
-        searchViewModel.setQuery(queries)
-        searchView.clearFocus()
-        return true
+                    override fun onQueryTextSubmit(query: String): Boolean {
+                        subscriber.onNext(query)
+                        return false
+                    }
+                })
+            }
+            .debounce(500, TimeUnit.MILLISECONDS)
+            .filter { query -> query.isNotEmpty() }
+            .subscribe { query ->
+                val queries = mutableMapOf(QUERY_KEY to query)
+                searchViewModel.setQuery(queries)
+            }
     }
-
-    override fun onQueryTextChange(newText: String?): Boolean = false
 }

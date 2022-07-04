@@ -50,6 +50,10 @@ buildscript {
     ext.core_testing_version = '2.1.0'
     ext.espresso_core_version = '3.4.0'
 
+    // RxJava
+    ext.rxjava_version = '3.0.3'
+    ext.rxjava_android_version = '3.0.0'
+
     repositories {
         google()
         mavenCentral()

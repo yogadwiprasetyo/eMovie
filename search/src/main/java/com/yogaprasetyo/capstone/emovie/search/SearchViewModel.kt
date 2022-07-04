@@ -14,6 +14,6 @@ class SearchViewModel(movieUseCase: MovieUseCase) : ViewModel() {
         }
 
     fun setQuery(queries: MutableMap<String, String>) {
-        _query.value = queries
+        _query.postValue(queries)
     }
 }
