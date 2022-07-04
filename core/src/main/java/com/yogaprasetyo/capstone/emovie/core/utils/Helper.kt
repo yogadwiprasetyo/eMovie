@@ -16,11 +16,8 @@ import kotlin.reflect.KProperty
 /**
  * Get certificate pinner for domain api.themoviedb.org
  * */
-fun getCertificatePinner(): CertificatePinner {
-    val pinner = CertificatePinner.Builder()
-    pinSHA256.forEach { pinner.add(HOSTNAME, it) }
-    return pinner.build()
-}
+fun getCertificatePinner(): CertificatePinner =
+    CertificatePinner.Builder().add(HOSTNAME, CERTIFICATE_PINNING).build()
 
 /**
  * Load image from url with Glide library

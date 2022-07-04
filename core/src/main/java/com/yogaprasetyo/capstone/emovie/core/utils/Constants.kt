@@ -1,13 +1,16 @@
 package com.yogaprasetyo.capstone.emovie.core.utils
 
-const val BASE_URL = "https://api.themoviedb.org/3/"
-const val IMG_BASE_URL = "https://image.tmdb.org/t/p/original"
+import com.yogaprasetyo.capstone.emovie.core.BuildConfig
+
 const val API_KEY = "ac992c711fd901227c04a53fc868bd42"
 const val QUERY_API_KEY = "api_key"
 const val QUERY_KEY = "query"
 const val GENRE_KEY = "with_genres"
 const val HOSTNAME = "api.themoviedb.org"
-val SECRET_PASSPHRASE = "movie-projects".toCharArray()
+const val BASE_URL = BuildConfig.BASE_URL
+const val IMG_BASE_URL = BuildConfig.IMG_BASE_URL
+const val CERTIFICATE_PINNING = BuildConfig.CERTIFICATE_PINNING
+val SECRET_PASSPHRASE = BuildConfig.SECRET_PASSPHRASE.toCharArray()
 
 enum class TypeMovie {
     TRENDING, POPULAR, NOW_PLAYING, TOP_RATED
