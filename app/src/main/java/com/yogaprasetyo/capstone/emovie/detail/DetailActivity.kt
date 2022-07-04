@@ -37,7 +37,7 @@ class DetailActivity : AppCompatActivity() {
 
     private fun setupDataToView(movie: Movie) {
         val (_, poster, _, title, releaseDate, rating, ratingCount, genres, overview, _, _, isFavorite) = movie
-        val year = releaseDate.split("-")[0]
+        val year = releaseDate?.let { it.split("-")[0] } ?: "-"
         val fixGenres = genres.replace("null", "Unknown")
 
         binding.apply {

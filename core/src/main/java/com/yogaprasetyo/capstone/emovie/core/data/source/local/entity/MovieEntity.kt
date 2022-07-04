@@ -10,7 +10,7 @@ data class MovieEntity(
     var poster: String,
     var backdrop: String,
     var title: String,
-    var releaseDate: String,
+    var releaseDate: String?,
     var rating: Double,
     var ratingCount: Int,
     var genres: String,

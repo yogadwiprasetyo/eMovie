@@ -31,7 +31,7 @@ class ThumbnailAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(movie: Movie) {
             binding.apply {
-                val year = movie.releaseDate.split("-")[0]
+                val year = movie.releaseDate?.let { it.split("-")[0] } ?: "-"
                 ivThumbnailPoster.loadImage(itemView.context, movie.backdrop)
                 tvThumbnailTitle.text = movie.title
                 tvThumbnailYear.text = year

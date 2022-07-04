@@ -9,7 +9,7 @@ data class Movie(
     val poster: String,
     val backdrop: String,
     val title: String,
-    val releaseDate: String,
+    val releaseDate: String?,
     val rating: Double,
     val ratingCount: Int,
     val genres: String,
