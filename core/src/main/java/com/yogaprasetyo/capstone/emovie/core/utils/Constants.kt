@@ -28,10 +28,3 @@ val genres = mapOf(
     878 to "Sci-fi",
     53 to "Thriller"
 )
-
-val pinSHA256 = arrayOf(
-    "sha256/oD/WAoRPvbez1Y2dfYfuo4yujAcYHXdv1Ivb2v2MOKk=",
-    "sha256/JSMzqOOrtyOT1kmau6zKhgT676hGgczD5VMdRMyJZFA=",
-    "sha256/++MBgDH5WGvL9Bcn5Be30cRcL0f5O+NyoXuWtQdX1aI=",
-    "sha256/KwccWaCgrnaw6tsrrSO61FgLacNgG2MMLq8GE6+oP5I=",
-)
